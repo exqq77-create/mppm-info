@@ -1458,7 +1458,13 @@
    "body_chars": 1363,
    "sha256_16": "8272d059da34bed8",
    "exact_dup_of": null,
-   "used": []
+   "used": [
+    {
+     "slug": "daegu-skinbooster-09",
+     "date": "2026-10-22",
+     "note": "스킨부스터 시술 후 변화 항목별 비교·회차/병행 간격 판단 각도(원문 1363자로 짧아 확인 질문·생활요인 보강)"
+    }
+   ]
   },
   {
    "id": "109",
@@ -2598,7 +2604,13 @@
    "body_chars": 2401,
    "sha256_16": "f8725f6d21bf81a7",
    "exact_dup_of": null,
-   "used": []
+   "used": [
+    {
+     "slug": "daegu-hair-removal-09",
+     "date": "2026-10-22",
+     "note": "수염 제모 반영구 의미·잔털·보정 기대치 각도(횟수·주기 수치 제외)"
+    }
+   ]
   },
   {
    "id": "199",
