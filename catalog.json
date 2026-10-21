@@ -120,7 +120,13 @@
    "body_chars": 2246,
    "sha256_16": "106ba208dec86b69",
    "exact_dup_of": null,
-   "used": []
+   "used": [
+    {
+     "slug": "daegu-hair-removal-06",
+     "date": "2026-10-21",
+     "note": "털 성장 주기와 시술 간격, 시작 시점, 장비·에너지 설정 확인 질문"
+    }
+   ]
   },
   {
    "id": "011",
@@ -1218,7 +1224,13 @@
    "body_chars": 2102,
    "sha256_16": "5632610c734c7efc",
    "exact_dup_of": null,
-   "used": []
+   "used": [
+    {
+     "slug": "daegu-skinbooster-06",
+     "date": "2026-10-21",
+     "note": "점성 있는 제제의 주입 압박감, 진피층 주입 깊이, 마취 성분 포함 제품 선택 기준"
+    }
+   ]
   },
   {
    "id": "096",
