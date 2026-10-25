@@ -200,10 +200,12 @@ def main():
         t = re.sub(r'(<div class="risk"><h2>위험과 주의사항</h2><p>).*?(</p></div>)', lambda m: m.group(1) + spec['risk'] + m.group(2), t, flags=re.S)
     # prev/next: 사이트 전체에서 next 가 비어 있는 글(= 가장 최신)
     prev_slug = re.search(r'<li class="post-item">\s*<a href="/journal/([^/]+)/"', rd(os.path.join(root, 'blog/index.html'))).group(1)
-    assert re.search(r'class="prevnext".*?<span></span>\s*</nav>', posts[prev_slug]['text'], re.S), 'latest post has next'
+    pnb = re.search(r'<nav class="prevnext".*?</nav>', posts[prev_slug]['text'], re.S).group(0)
+    assert 'class="next"' not in pnb, 'latest post has next'
+    has_span = '<span></span>' in pnb
     assert prev_slug, 'prev not found'
     pt = posts[prev_slug]['title']
-    pn = (f'<nav class="prevnext" aria-label="이전·다음 글">\n      <a class="prev" href="/journal/{prev_slug}/"><span>← 이전 글</span>{pt}</a>\n      <span></span>\n    </nav>')
+    pn = (f'<nav class="prevnext" aria-label="이전·다음 글">\n      <a class="prev" href="/journal/{prev_slug}/"><span>← 이전 글</span>{pt}</a>\n' + ('      <span></span>\n' if has_span else '') + '    </nav>')
     t = re.sub(r'<nav class="prevnext".*?</nav>', lambda m: pn, t, flags=re.S)
     rel_slugs = [slug] + same[::-1][:2]
     rel = '<ul>' + ''.join(f'<li><a href="/journal/{s}/">{title if s == slug else posts[s]["title"]}</a></li>' for s in rel_slugs) + '</ul>'
@@ -213,7 +215,10 @@ def main():
     # 이전 글의 next
     pp = posts[prev_slug]['text']
     nx = f'<a class="next" href="/journal/{slug}/"><span>다음 글 →</span>{title}</a>'
-    pp2 = re.sub(r'(class="prevnext".*?)<span></span>(\s*</nav>)', lambda m: m.group(1) + nx + m.group(2), pp, count=1, flags=re.S)
+    if has_span:
+        pp2 = re.sub(r'(class="prevnext".*?)<span></span>(\s*</nav>)', lambda m: m.group(1) + nx + m.group(2), pp, count=1, flags=re.S)
+    else:
+        pp2 = re.sub(r'(<nav class="prevnext".*?)(\s*</nav>)', lambda m: m.group(1) + '\n      ' + nx + m.group(2), pp, count=1, flags=re.S)
     assert pp2 != pp
     out[os.path.join(root, 'journal', prev_slug, 'index.html')] = pp2
 
