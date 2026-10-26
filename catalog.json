@@ -3318,7 +3318,13 @@
    "body_chars": 1356,
    "sha256_16": "05c1ae06e7ed9d99",
    "exact_dup_of": null,
-   "used": []
+   "used": [
+    {
+     "slug": "daegu-skinbooster-25",
+     "date": "2026-10-26",
+     "note": "213 대구스킨부스터(PDRN·PLA 계열, PLA 생분해성·서서히 콜라겐, 입자 크기별 용도) 사실 사용. 자동분류는 daegu-onda였으나 내용이 스킨부스터라 daegu-skinbooster 글로 사용(daegu-onda는 미사용 원문이 모두 주제 불일치). 원장 이름·제품 홍보 제거"
+    }
+   ]
   },
   {
    "id": "214",
