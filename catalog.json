@@ -3955,7 +3955,13 @@
    "body_chars": 2125,
    "sha256_16": "aa5a1fbd97519be2",
    "exact_dup_of": null,
-   "used": []
+   "used": [
+    {
+     "slug": "daegu-botox-25",
+     "date": "2026-10-26",
+     "note": "턱보톡스 반복 시술 간격·용량, 유지기간 변화, 과하지 않게 받는 기준 각도"
+    }
+   ]
   },
   {
    "id": "254",
